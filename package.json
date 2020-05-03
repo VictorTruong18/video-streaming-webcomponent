@@ -1,0 +1,20 @@
+{
+  "name": "video-stream-sample",
+  "version": "1.0.0",
+  "description": "Streaming video example",
+  "main": "server.js",
+  "engines": {
+    "node": ">=6.2.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "daspinola",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0"
+  }
+}
