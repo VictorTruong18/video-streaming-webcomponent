@@ -3,16 +3,15 @@ const fs = require('fs')
 const path = require('path')
 const app = express()
 const compression = require('compression')
+const port = process.env.PORT || 3000
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(compression());
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/index.htm'))
-})
 
-app.get('/video', function(req, res) {
-  const path = 'assets/creed.mp4'
+
+app.get('/', function(req, res) {
+  const path = 'assets/sample.mp4'
   const stat = fs.statSync(path)
   const fileSize = stat.size
   const range = req.headers.range
@@ -50,6 +49,8 @@ app.get('/video', function(req, res) {
   }
 })
 
-app.listen(3000, function () {
-  console.log('Listening on port 3000!')
+app.listen(port, function () {
+  console.log(`Listening on port !`)
+  console.log(port)
+ 
 })
